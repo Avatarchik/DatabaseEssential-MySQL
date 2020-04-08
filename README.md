@@ -13,24 +13,97 @@ A simple codebase to implement Backend to your Unity App or Games.
 
 # Useful Functions 
 
+**To close any existing connection from Server-**
 
 ```c# 
 public bool Close() 
 
 DatabaseEssential.DatabaseManager.instance.Close();
 ```
-To close any existing connection from Server. 
 
-```public string Query(string statement)``` To execute any Reader SQL Statement 
+**To execute any Reader SQL Statement-**
 
-```public void NonQuery(string statement)``` To execute Non-Query SQL Command
+```c# 
+public string Query(string statement)
 
-```public void InsertRecord(string tableName, string keys, string values)``` To Insert Record(s) to Table 
+DatabaseEssential.DatabaseManager.instance.Query("SELECT * FROM userdata ORDER BY ID DESC");
+``` 
 
-```public void DeleteRecord(string tableName, string condition)``` To Delete Record(s) from Table
+**To execute Non-Query SQL Command-**
 
-```public void UpdateRecord(string tableName, string condition)``` To Updata Data in Database
+```c#
+public void NonQuery(string statement)
 
-```public List<string>[] SelectAllRecord(string tableName, string columnName)``` To Fetch All Records from Table according to column name
+DatabaseEssential.DatabaseManager.instance.NonQuery("UPDATE MyGuests SET lastname='Doe' WHERE id=2");
+``` 
 
-```public int Count(string tableName)``` To count records of Table
+
+**To Insert Record(s) to Table-**
+
+```c#
+public void InsertRecord(string tableName, string keys, string values)
+
+DatabaseEssential.DatabaseManager.instance.InsertRecord("userdata", "ID,Username,Password,Email,Phone,Address", $"'0', '{randomName}', '123456', '{randomName}@gmail.com', '0123456789', 'Unknown Street, Unknown Street'");
+``` 
+
+
+**To Delete Record(s) from Table-**
+
+```c#
+public void DeleteRecord(string tableName, string condition)
+
+DatabaseEssential.DatabaseManager.instance.DeleteRecord("userdata", "Username='Ashikur Rahman'");
+``` 
+
+
+**To Updata Data in Database-**
+
+```c#
+public void UpdateRecord(string tableName, string condition)
+
+DatabaseEssential.DatabaseManager.instance.UpdateRecord("userdata", "Username='Ashikur Rahman' WHERE Username='Srejon Khan'");
+``` 
+
+
+**To Fetch All Records from Table according to column name-**
+
+```c#
+public List<string>[] SelectAllRecord(string tableName, string columnName)
+
+string columnName = "ID,Username,Password,Email,Phone,Address";
+List<string>[] results = DatabaseEssential.DatabaseManager.instance.SelectAllRecord("userdata",columnName);
+
+for (int i = 0; i < results.Length; i++)
+{
+    List<string> tempList = results[i];
+    foreach (var records in tempList)
+        Debug.Log(records);
+}
+``` 
+
+
+**To count records of Table-**
+
+```c#
+public int Count(string tableName)
+
+int userCount = DatabaseEssential.DatabaseManager.instance.Count("userdata");
+``` 
+
+
+# Contacts
+
+**Srejon Khan**, Game Programmer
+
+>Chasing dreams like I'm on Novocaine
+
+
+**Mail:** srejonkhan9@gmail.com
+
+**Facebook:** https://facebook.com/srejon.khan.75
+
+**Instagram:** https://instagram.com/srejon_khan
+
+**Youtube:** https://www.youtube.com/channel/UCwPq4rkea5O5JAetNFJvdGg
+
+ 
