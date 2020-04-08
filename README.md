@@ -14,7 +14,10 @@ A simple codebase to implement Backend to your Unity App or Games.
 # Useful Functions 
 
 
-```public bool Close()``` To close any existing connection from Server. 
+```c#
+public bool Close()
+``` 
+To close any existing connection from Server. 
 
 ```public string Query(string statement)``` To execute any Reader SQL Statement 
 
