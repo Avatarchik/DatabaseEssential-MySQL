@@ -15,9 +15,11 @@ A simple codebase to implement Backend to your Unity App or Games.
 
 
 ```c# 
-public bool Close() ```
-**Example**
-```DatabaseEssential.DatabaseManager.instance.Close();``` 
+public bool Close() 
+```
+
+**Example** ```DatabaseEssential.DatabaseManager.instance.Close();``` 
+
 To close any existing connection from Server. 
 
 ```public string Query(string statement)``` To execute any Reader SQL Statement 
