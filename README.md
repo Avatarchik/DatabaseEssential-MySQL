@@ -2,6 +2,8 @@
 
 A simple codebase to implement Backend to your Unity App or Games.
 
+![](images/banner.png)
+
 # Classes 
 
 **DatabaseManager.cs**  Core class which contains all functions to initialize and command.
